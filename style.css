@@ -1,0 +1,586 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Ubuntu";
+  background-color: #111;
+  color: #eee;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  #menulist {
+    background-color: #111;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    margin-top: 12vh;
+    position: absolute;
+    z-index: 100;
+    font-size: 1.8em;
+    line-height: 2em;
+  }
+  #menulist a {
+    color: #fff;
+    padding: 2px 2em;
+  }
+  #menulist a:hover {
+    color: blue;
+  }
+
+  .none {
+    display: none;
+  }
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2em 0.8em;
+    position: fixed;
+    width: 100%;
+    background-color: #333;
+    height: 10vh;
+    z-index: 30;
+  }
+  #searchbox,
+  #menu,
+  #cancle {
+    color: rgba(255, 85, 0, 0.889);
+    font-size: 1.46em;
+  }
+  #page1 {
+    position: relative;
+    top: 12vh;
+    height: 80vh;
+    width: 100vw;
+  }
+  #page1 #top {
+    display: flex;
+    width: 100%;
+    overflow: scroll;
+  }
+
+  #page1 #top .showcase {
+    font-size: 3em;
+    margin-left: 1em;
+    margin-top: 10px;
+    height: 80vh;
+  }
+  #page1 #top .showcase button {
+    height: 3.5em;
+    padding: 1em;
+    border-radius: 2em;
+    font-weight: 700;
+    background: linear-gradient(to right, rgb(230, 48, 48), rgb(231, 101, 231));
+    color: #eee;
+  }
+  #page1 #top #box1 {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/collaboration-new:Small?wid=649&hei=768&dpr=off");
+    background-position: 0em 3.4em;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  #page1 #top #box2 {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/innovate-adapt-thrive?wid=683&hei=384&dpr=off");
+    background-position: 0em 3.4em;
+    background-size: 300%;
+    background-repeat: no-repeat;
+  }
+  #page1 #top #box3 {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/banking-beyond-boundaries-new:Small?wid=649&hei=768&dpr=off");
+    background-position: 0em 3.4em;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  #page1 #top #box4 {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/raring-to-change-%20new:Small?wid=649&hei=768&dpr=off");
+    background-position: 0em 3.4em;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  #page1 #top #box5 {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/progress-with-purpose-new:Small?wid=584&hei=691&dpr=off");
+    background-position: 0em 3.4em;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  #page1 #top #box6 {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/recognize-risks-new:Small?wid=649&hei=768&dpr=off");
+    background-position: 0em 3.4em;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  #chatBox {
+    display: inline-flex;
+    align-items: center;
+    padding: 1em 2em;
+    position: fixed;
+    bottom: 8vh;
+    right: -1.5em;
+    background-color: #e41165;
+    border-radius: 2em;
+    font-size: 1.1em;
+    font-weight: 500;
+    z-index: 20;
+  }
+  #page2 {
+    padding-top: 12vh;
+    display: flex;
+    flex-direction: column;
+  }
+  #page2 h2 {
+    padding-left: 2em;
+    font-size: 35px;
+    font-weight: normal;
+  }
+  #page2 #snapshots {
+    text-align: center;
+    display: grid;
+    overflow: scroll;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 20px;
+  }
+  #page2 .text {
+    padding: 20px;
+  }
+
+  #page2 .circle {
+    height: 6.5em !important;
+    width: 6.5em !important;
+    border: 4px solid rgba(255, 0, 0, 0.927);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 15px;
+  }
+
+  #page2 .circle img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    scale: 0.9;
+  }
+
+  #page3 #content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #page3 #content #answer {
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.8em;
+    margin-bottom: 2em;
+  }
+
+  #page3 #content #answer h3 {
+    color: #878585;
+    font-size: 0.7em;
+  }
+  #page3 #content #cards {
+    position: relative;
+    width: 100vw;
+  }
+  #page3 #content #cards span {
+    margin: 1em;
+  }
+  #page3 #content #cards span:nth-child(1) {
+    border-radius: 50%;
+    border: 1px solid white;
+    padding: 0.5em 0.7em;
+  }
+  #page3 #content #cards #card1 {
+    width: 75%;
+    background-color: #2f2e2e;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin: auto;
+    margin-top: 2.9em;
+    padding: 2em;
+  }
+  #page3 .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  #page3 .buttons #btn1,
+  #page3 .buttons #btn2 {
+    height: 50px;
+    width: 50px;
+    background-color: #e41165;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    border-radius: 50%;
+  }
+  #page3 .buttons #btn1 span,
+  #page3 .buttons #btn2 span {
+    position: absolute;
+    bottom: 0;
+  }
+  #page4 #heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+  }
+  #page4 #cardwrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  #page4 #cardwrapper .incards {
+    width: 75%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  #page4 #cardwrapper .incards button:nth-child(1) {
+    margin: 20px;
+    padding: 5px 8px;
+    background-color: #eee;
+    color: #111;
+    border-radius: 20px;
+    margin-bottom: 20vw;
+  }
+  #page4 #cardwrapper .incards button {
+    margin: 20px;
+    padding: 5px 8px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: none;
+    color: #ef0592db;
+    letter-spacing: 1px;
+  }
+  #page4 #cardwrapper #incard1 {
+    background: url("https://www.tcs.com/content/dam/global-tcs/en/images/home/insights-by-interest/metaverse-meets-modern-medicine.jpg/jcr:content/renditions/cq5dam.thumbnail.480.480.jpeg");
+    background-position: center;
+    background-size: cover;
+    text-shadow: 2px 2px 3px #111;
+  }
+  #page4 #cardwrapper #incard2 {
+    background: url("https://www.tcs.com/content/dam/global-tcs/en/images/home/insights-by-interest/c-suites-cybersecurity-considerations.jpg/jcr:content/renditions/cq5dam.thumbnail.480.480.jpeg");
+    background-size: cover;
+    text-shadow: 2px 2px 3px #111;
+  }
+  #page4 #cardwrapper #incard3 {
+    background: url("https://www.tcs.com/content/dam/global-tcs/en/images/home/insights-by-interest/flattening-fintech-fraud.jpg/jcr:content/renditions/cq5dam.thumbnail.480.480.jpeg");
+    background-size: cover;
+    text-shadow: 2px 2px 3px #111;
+  }
+
+  #page5 {
+    width: 100vw;
+    overflow: scroll;
+    position: relative;
+    height: 100vh;
+  }
+  #page5 h2 {
+    margin: 40px auto;
+  }
+  #page5 #vh_70_1 {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/al-cloud?wid=608&hei=340&dpr=off");
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 98vw;
+    margin: auto;
+    position: absolute;
+  }
+
+  #page5 #vh_70_2 {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/idc-marketscape-lauds-our-holistic-approach?wid=1000&hei=560&dpr=off");
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 98vw;
+    margin: auto;
+    position: absolute;
+  }
+
+  #page5 #vh_70_3 {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/building-bank-future?wid=1000&hei=560&dpr=off");
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 98vw;
+    margin: auto;
+    position: absolute;
+  }
+
+  #page5 #vh_70_4 {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/women-workforce?wid=1000&hei=560&dpr=off");
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 98vw;
+    margin: auto;
+    position: absolute;
+  }
+  #page5 .vh_70 #top_45 {
+    padding-top: 7.6em;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px #343;
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+  #page5 .vh_70 #btnlike {
+    background: transparent;
+    border: 1.4px solid #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: inline;
+    margin-left: 20px;
+  }
+  #page5 #controls {
+    z-index: 20;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  #page5 #controls .image {
+    padding: 0 5px;
+    font-size: 30px;
+    text-shadow: 2px 2px 2px #333;
+  }
+
+  .indexup {
+    z-index: 5;
+  }
+  #page5 #controls .image:hover {
+    cursor: pointer;
+  }
+
+  #page5 #controls .active {
+    color: #e41165;
+    text-shadow: 2px 2px 3px #e41165;
+  }
+
+  #page6 #haveimage {
+    width: 100vw;
+    overflow: hidden;
+  }
+  #page6 #haveimage img {
+    background-position: center;
+    width: 100%;
+  }
+
+  #page6 #haveimage #havetext {
+    background-color: #fff;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    padding: 20px;
+    transform: translate(-50%);
+  }
+
+  #page6 #haveimage #havetext h2 {
+    color: #343;
+    font-size: 15px;
+  }
+
+  #page6 #haveimage #havetext .red {
+    font-size: 2.4em;
+    padding: 10px;
+  }
+
+  #page7 {
+    padding-top: calc(85vh - 10vw);
+  }
+
+  #page7 #cardWrapper2 {
+    text-align: left;
+    display: grid;
+    overflow: scroll;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 20px;
+  }
+
+  #page7 .cards-2 span {
+    color: #e41165;
+  }
+
+  #page7 .cards-2 {
+    margin: 10px 2em;
+    padding: 20px;
+    text-shadow: 2px 2px 2px #111;
+  }
+
+  #page7 #pehla {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/nwc-erp-platform-transformation-supply-card-1?wid=665&hei=635&dpr=off");
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    width: 70vw;
+    padding-top: 20vh;
+  }
+
+  #page7 #doosra {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/ai-hero-2:Small?wid=719&hei=851&dpr=off");
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    padding-top: 20vh;
+    width: 70vw;
+  }
+
+  #page7 #teesra {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/kautex-accelerates-digitalization-sustainable-mobility-card?wid=665&hei=635&dpr=off");
+    background-position: center;
+    background-size: cover;
+    padding-top: 20vh;
+    height: 50vh;
+    width: 70vw;
+  }
+
+  #page7 #chautha {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/colruyt-algo-pricing-1?wid=480&hei=270&dpr=off");
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    padding-top: 20vh;
+    width: 70vw;
+  }
+
+  #page7 #panchva {
+    background: url("https://s7ap1.scene7.com/is/image/TCSCOMprod/takeda-Card-1330x1270-1?wid=665&hei=635&dpr=off");
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    padding-top: 20vh;
+    width: 70vw;
+  }
+
+  #page8 {
+    background-color: rgb(8, 8, 8);
+    overflow: hidden;
+  }
+  #page8 #wrapper {
+    height: 40vh;
+    width: 100vw;
+  }
+  #page8 #wrapper img {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+
+  #page8 #text {
+    background: url("https://media.istockphoto.com/id/1069378234/photo/marble-white-and-texture-tile-ceramic-gray-background-marble-natural-for-interior-decoration.webp?b=1&s=170667a&w=0&k=20&c=Let2ZQ9yeMc-MnohuYr1uZIj0Dq53uFnUDBg-680EjM=");
+    width: 80%;
+    margin: auto;
+    z-index: 3;
+    backface-visibility: hidden;
+    padding: 20px;
+  }
+  #page8 #text .red {
+    font-size: 2.4em;
+    padding: 10px;
+  }
+  #page8 #text h2 {
+    color: #343;
+    font-size: 15px;
+  }
+  #footer #icons i {
+    margin: 0 1.3em;
+  }
+  #footer #icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+  }
+  #footer #links a {
+    text-decoration: none;
+    color: #fff;
+  }
+  #footer #links {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 27px;
+    line-height: 2em;
+    font-size: 0.88em;
+  }
+  #footer h5 {
+    font-weight: normal;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+  }
+  #workinprogress {
+    display: none;
+  }
+}
+
+@media (min-width: 800.1px) {
+  #page1,
+  #page2,
+  #page3,
+  #page4,
+  #page5,
+  #page6,
+  #page7,
+  #page8,
+  #menulist,
+  #menu,
+  #cancle,
+  #searchbox,
+  #chatBox {
+    display: none;
+  }
+
+  #navbar {
+    padding-top: 1.2rem;
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+  }
+
+  #workinprogress {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #footer {
+    position: absolute;
+    top: 70vh;
+    color: #fff;
+    text-align: center;
+    width: 60%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  #footer #icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+  }
+  #footer a {
+    color: #fff;
+    display: block;
+  }
+  #footer h5 {
+    margin-top: 30px;
+  }
+}
